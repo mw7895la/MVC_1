@@ -20,7 +20,7 @@ public class FrontControllerServletV1 extends HttpServlet {
     //매핑정보를 만들자  key는 url  value 는 ControllerV1 // 어떤 url이 호출되면 컨트롤러V1을 꺼내서 호출해.
     private Map<String, ControllerV1> controllerMap = new HashMap<>();
 
-    public FrontControllerServletV1() {
+    public FrontControllerServletV1() {         //서버 실행 후 서블릿 컨테이너에 서블릿이 등록되기 위해 생성됩니다.
         System.out.println("@WebServlet이 부착된 부분이 빈으로 등록될 때 생성자 호출");
         controllerMap.put("/front-controller/v1/members/new-form", new MemberFormControllerV1());
         controllerMap.put("/front-controller/v1/members/save", new MemberSaveControllerV1());
